@@ -7,14 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class Weather;
-
-@protocol ListViewDelegate <NSObject>
-
-- (void)didSelectWeather:(Weather *)weather;
-
-@end
+#import "ListViewDelegate.h"
 
 @interface ListViewController : UIViewController
 

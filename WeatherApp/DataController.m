@@ -11,8 +11,8 @@
 #import "Weather.h"
 
 @interface DataController ()
-@property (strong, nonatomic) NSDictionary *responseDict;
 
+@property (strong, nonatomic) NSDictionary *responseDict;
 @end
 
 @implementation DataController

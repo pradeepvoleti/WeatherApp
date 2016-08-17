@@ -26,14 +26,17 @@ NSString *const ImageURL = @"http://openweathermap.org/img/w/";
     [super awakeFromNib];
 }
 
+#pragma mark - Setting Data
+
 - (void)setdata:(Weather *)weather {
     self.temperature.text = weather.dayTemp;
     self.humidity.text = weather.humidity;
     self.weatherDescription.text = weather.weatherDescription;
     self.weatherIcon = weather.weatherIcon;
-    
     [self showImage];
 }
+
+#pragma mark - Private
 
 - (void)showImage {
     NSString *urlString = [self createURL];
@@ -48,10 +51,6 @@ NSString *const ImageURL = @"http://openweathermap.org/img/w/";
     urlString = [urlString stringByAppendingString:self.weatherIcon];
     urlString = [urlString stringByAppendingString:@".png"];
     return urlString;
-}
-
-- (void)setTextStyle {
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

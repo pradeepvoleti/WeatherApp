@@ -18,42 +18,32 @@
 
 @implementation DetailViewController
 
+#pragma mark - Setters
+
 - (void)setWeather:(Weather *)weather {
     
-    if (_weather != weather) {
+    if (!_weather || _weather != weather) {
         _weather = weather;
         [self setTextViewContent:weather];
     }
 }
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setTextViewContent:self.weather];
 }
 
 #pragma mark - DetailsVC Delegate
-/*
- @property (copy, nonatomic) NSString *dt;
- @property (copy, nonatomic) NSString *dayTemp;
- @property (copy, nonatomic) NSString *minTemp;
- @property (copy, nonatomic) NSString *maxTemp;
- @property (copy, nonatomic) NSString *nightTemp;
- @property (copy, nonatomic) NSString *eveTemp;
- @property (copy, nonatomic) NSString *mornTemp;
- 
- @property (copy, nonatomic) NSString *pressure;
- @property (copy, nonatomic) NSString *humidity;
- @property (copy, nonatomic) NSString *weatherId;
- @property (copy, nonatomic) NSString *weatherMain;
- @property (copy, nonatomic) NSString *weatherDescription;
- @property (copy, nonatomic) NSString *weatherIcon;
- @property (copy, nonatomic) NSString *speed;
- @property (copy, nonatomic) NSString *deg;
- @property (copy, nonatomic) NSString *clouds;
- */
+
 - (void)didSelectWeather:(Weather *)weather {
     
     [self setTextViewContent:weather];
 }
+
+#pragma mark - Private
 
 - (void)setTextViewContent:(Weather *)weather {
     
@@ -79,6 +69,10 @@
 }
 
 - (void)addAttributedStringForKey:(NSString *)key value:(NSString *)value {
+    
+    if (!value) {
+        return;
+    }
     
     [self.string appendAttributedString:[key titleAttributedString]];
     [self.string appendAttributedString:[NSString spaceAttributedString]];

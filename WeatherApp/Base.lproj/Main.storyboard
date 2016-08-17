@@ -8,7 +8,7 @@
         <!--Detail View Controller-->
         <scene sceneID="zOJ-RG-lSE">
             <objects>
-                <viewController id="d4t-v8-oEo" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d4t-v8-oEo" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VAB-gB-D0o"/>
                         <viewControllerLayoutGuide type="bottom" id="sK6-GM-t1M"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVn-Ay-ARK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="20" y="10" width="560" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -26,10 +26,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GVn-Ay-ARK" firstAttribute="leading" secondItem="0kd-hE-M7p" secondAttribute="leading" id="PwN-Q8-Lul"/>
-                            <constraint firstItem="GVn-Ay-ARK" firstAttribute="top" secondItem="VAB-gB-D0o" secondAttribute="bottom" id="XS2-M6-6cm"/>
-                            <constraint firstAttribute="trailing" secondItem="GVn-Ay-ARK" secondAttribute="trailing" id="bql-l5-bhU"/>
-                            <constraint firstItem="sK6-GM-t1M" firstAttribute="top" secondItem="GVn-Ay-ARK" secondAttribute="bottom" id="tKS-Y2-S5d"/>
+                            <constraint firstItem="GVn-Ay-ARK" firstAttribute="leading" secondItem="0kd-hE-M7p" secondAttribute="leading" constant="20" id="PwN-Q8-Lul"/>
+                            <constraint firstItem="GVn-Ay-ARK" firstAttribute="top" secondItem="VAB-gB-D0o" secondAttribute="bottom" constant="10" id="XS2-M6-6cm"/>
+                            <constraint firstAttribute="trailing" secondItem="GVn-Ay-ARK" secondAttribute="trailing" constant="20" id="bql-l5-bhU"/>
+                            <constraint firstItem="sK6-GM-t1M" firstAttribute="top" secondItem="GVn-Ay-ARK" secondAttribute="bottom" constant="10" id="tKS-Y2-S5d"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -62,7 +62,7 @@
         <!--List View Controller-->
         <scene sceneID="0J9-2M-Fym">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dwq-eC-RY1" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dwq-eC-RY1" customClass="ListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FTF-tf-nRV"/>
                         <viewControllerLayoutGuide type="bottom" id="Fcv-jW-9sG"/>

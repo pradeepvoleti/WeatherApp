@@ -18,9 +18,7 @@
 		276925A31D647F6A002A0C32 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925A21D647F6A002A0C32 /* Weather.m */; };
 		276925A91D64913E002A0C32 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925A81D64913E002A0C32 /* DataController.m */; };
 		276925AF1D64932E002A0C32 /* WeatherServiceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */; };
-		276925B21D64934D002A0C32 /* ImageServiceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925B11D64934D002A0C32 /* ImageServiceFetcher.m */; };
 		276925BD1D64959B002A0C32 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925BC1D64959B002A0C32 /* MBProgressHUD.m */; };
-		276925C11D64A430002A0C32 /* WebServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C01D64A430002A0C32 /* WebServiceController.m */; };
 		276925C41D64A7A5002A0C32 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C31D64A7A5002A0C32 /* Network.m */; };
 		276925C71D64C755002A0C32 /* NSString+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C61D64C755002A0C32 /* NSString+Extended.m */; };
 /* End PBXBuildFile section */
@@ -46,17 +44,14 @@
 		276925A81D64913E002A0C32 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		276925AD1D64932E002A0C32 /* WeatherServiceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherServiceFetcher.h; sourceTree = "<group>"; };
 		276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherServiceFetcher.m; sourceTree = "<group>"; };
-		276925B01D64934D002A0C32 /* ImageServiceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageServiceFetcher.h; sourceTree = "<group>"; };
-		276925B11D64934D002A0C32 /* ImageServiceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageServiceFetcher.m; sourceTree = "<group>"; };
 		276925B31D649387002A0C32 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		276925BB1D64959B002A0C32 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		276925BC1D64959B002A0C32 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		276925BF1D64A430002A0C32 /* WebServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceController.h; sourceTree = "<group>"; };
-		276925C01D64A430002A0C32 /* WebServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceController.m; sourceTree = "<group>"; };
 		276925C21D64A7A5002A0C32 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		276925C31D64A7A5002A0C32 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		276925C51D64C755002A0C32 /* NSString+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extended.h"; sourceTree = "<group>"; };
 		276925C61D64C755002A0C32 /* NSString+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extended.m"; sourceTree = "<group>"; };
+		276925CB1D64E6EA002A0C32 /* ListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +116,7 @@
 				276925941D647549002A0C32 /* DetailViewController.m */,
 				276925A71D64913E002A0C32 /* DataController.h */,
 				276925A81D64913E002A0C32 /* DataController.m */,
+				276925CB1D64E6EA002A0C32 /* ListViewDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,10 +137,6 @@
 				276925C31D64A7A5002A0C32 /* Network.m */,
 				276925AD1D64932E002A0C32 /* WeatherServiceFetcher.h */,
 				276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */,
-				276925B01D64934D002A0C32 /* ImageServiceFetcher.h */,
-				276925B11D64934D002A0C32 /* ImageServiceFetcher.m */,
-				276925BF1D64A430002A0C32 /* WebServiceController.h */,
-				276925C01D64A430002A0C32 /* WebServiceController.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -265,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276925C11D64A430002A0C32 /* WebServiceController.m in Sources */,
 				276925811D64730E002A0C32 /* AppDelegate.m in Sources */,
 				276925A91D64913E002A0C32 /* DataController.m in Sources */,
 				2769257E1D64730E002A0C32 /* main.m in Sources */,
@@ -274,7 +265,6 @@
 				276925AF1D64932E002A0C32 /* WeatherServiceFetcher.m in Sources */,
 				276925981D647572002A0C32 /* ListViewController.m in Sources */,
 				276925951D647549002A0C32 /* DetailViewController.m in Sources */,
-				276925B21D64934D002A0C32 /* ImageServiceFetcher.m in Sources */,
 				276925C41D64A7A5002A0C32 /* Network.m in Sources */,
 				2769259C1D64763C002A0C32 /* ListTableViewCell.m in Sources */,
 				276925C71D64C755002A0C32 /* NSString+Extended.m in Sources */,

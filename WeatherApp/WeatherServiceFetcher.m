@@ -21,17 +21,12 @@ NSString *const WeatherAPIURL = @"http://api.openweathermap.org/data/2.5/forecas
 
 - (NSDictionary *)fetchWeatherResponseWithSuccess:(SuccessHandler)success failureHandler:(FailureHandler)failure {
     
-//    WeatherServiceFetcher *__weak weakSelf = self;
-    
     [Network requestForURL:WeatherAPIURL withSuccess:^(NSDictionary *response) {
         
-//        if (weakSelf) {
-//            weakSelf.responseDict = response;
-            success(response);
-//        }
+        success(response);
         
     } failureHandler:^(NSError *error) {
-        NSLog(@"");
+
         failure(error);
     }];
     

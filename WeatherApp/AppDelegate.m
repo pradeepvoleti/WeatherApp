@@ -20,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     splitViewController.delegate = self;
     
     DetailViewController *detailVC = [splitViewController.viewControllers lastObject];
@@ -28,8 +29,9 @@
     ListViewController *listVC = (ListViewController *)[navVC topViewController];
     listVC.delegate = detailVC;
     
-    Weather *weather = [listVC.tableData firstObject];
-    detailVC.weather = weather;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [navVC setNavigationBarHidden:YES];
+    }
     
     return YES;
 }

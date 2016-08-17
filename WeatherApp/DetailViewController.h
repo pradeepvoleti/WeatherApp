@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ListViewController.h"
+#import "ListViewDelegate.h"
 
 @class Weather;
 

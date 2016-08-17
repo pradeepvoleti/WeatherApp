@@ -7,13 +7,13 @@
 //
 
 #import "ListViewController.h"
+#import "DetailViewController.h"
 #import "ListTableViewCell.h"
 #import "DataController.h"
 #import "MBProgressHUD.h"
 
 NSString *const CellIdentifier = @"cellIdentifier";
 CGFloat const CellHeight = 80;
-CGFloat const FooterHeight = 0.01;
 
 @interface ListViewController ()
 
@@ -37,7 +37,6 @@ CGFloat const FooterHeight = 0.01;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.hidden = YES;
     [self callWeatherAPI];
 }
 
@@ -51,44 +50,53 @@ CGFloat const FooterHeight = 0.01;
     
     ListTableViewCell *cell = (ListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     [cell setdata:[self.tableData objectAtIndex:indexPath.row]];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [self.delegate didSelectWeather:[self.tableData objectAtIndex:indexPath.row]];
+    
+    Weather *weather = [self.tableData objectAtIndex:indexPath.row];
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self.delegate didSelectWeather:weather];
+    } else {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        
+        DetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DetailViewController class])];
+        vc.weather = weather;
+        [self.navigationController pushViewController:vc animated:NO];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CellHeight;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return FooterHeight;
-//}
-
-#pragma mark - Private Methods
+#pragma mark - Private
 
 - (void)callWeatherAPI {
     [self showLoading];
     ListViewController *__weak weakSelf = self;
-//    self.dataController = [[DataController alloc]init];
+    
     [self.dataController getListData:^(NSArray *array) {
         weakSelf.tableData = array;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf hideLoading];
-            _tableView.hidden = YES;
             [_tableView reloadData];
+            
+            [self.delegate didSelectWeather:[self.tableData objectAtIndex:0]];
         });
     }];
+    
 }
 
 #pragma mark - Loaders
 
 -(void)showLoading
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.text = @"Loading...";
     hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:.2f];
 }
