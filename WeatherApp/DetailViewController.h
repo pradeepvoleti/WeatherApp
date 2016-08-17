@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
-@interface DetailViewController : UIViewController
+@class Weather;
+
+@interface DetailViewController : UIViewController <ListViewDelegate>
+
+@property (strong, nonatomic)Weather *weather;
 
 @end

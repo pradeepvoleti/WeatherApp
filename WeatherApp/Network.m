@@ -7,7 +7,35 @@
 //
 
 #import "Network.h"
-//http://api.openweathermap.org/data/2.5/forecast/daily?q=Philadelphia&mode=json&units=metric&cnt=16&APPID=8fe42361dad1acdaa0d63a8181e0f746
+
 @implementation Network
+
++ (void)requestForURL:(NSString *)urlString withSuccess:(SuccessHandler)success failureHandler:(FailureHandler)failure {
+    
+    NSURL *URL = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (!error) {
+            
+            NSError *jsonError;
+            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            
+            if (!jsonError) {
+                
+                success(response);
+            } else {
+                
+                failure(jsonError);
+            }
+            
+        } else {
+            failure(error);
+        }
+    }];
+    [task resume];
+}
 
 @end

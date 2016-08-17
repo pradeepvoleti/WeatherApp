@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Weather.h"
 
 @interface ListTableViewCell : UITableViewCell
+
+- (void)setdata:(Weather *)weather;
 
 @end

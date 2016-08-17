@@ -1,5 +1,5 @@
 //
-//  Network.h
+//  WeatherServiceFetcher.h
 //  WeatherApp
 //
 //  Created by Pradeep Voleti on 17/08/16.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Common.h"
 
-@interface Network : NSObject
+@interface WeatherServiceFetcher : NSObject
 
-+ (void)requestForURL:(NSString *)urlString withSuccess:(SuccessHandler)success failureHandler:(FailureHandler)failure;
+- (NSString *)fetchWeatherResponseWithSuccess:(SuccessHandler)success failureHandler:(FailureHandler)failure;
 
 @end

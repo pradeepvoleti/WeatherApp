@@ -1,5 +1,5 @@
 //
-//  Network.h
+//  DataController.h
 //  WeatherApp
 //
 //  Created by Pradeep Voleti on 17/08/16.
@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Common.h"
 
-@interface Network : NSObject
+@class Weather;
 
-+ (void)requestForURL:(NSString *)urlString withSuccess:(SuccessHandler)success failureHandler:(FailureHandler)failure;
+typedef void (^LoadWeather)(NSArray *array);
+
+@interface DataController : NSObject
+
+- (Weather *)getListData:(LoadWeather)callback;
 
 @end

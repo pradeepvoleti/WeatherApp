@@ -15,8 +15,14 @@
 		276925951D647549002A0C32 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925941D647549002A0C32 /* DetailViewController.m */; };
 		276925981D647572002A0C32 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925971D647572002A0C32 /* ListViewController.m */; };
 		2769259C1D64763C002A0C32 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769259A1D64763C002A0C32 /* ListTableViewCell.m */; };
-		276925A01D647A9F002A0C32 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769259F1D647A9F002A0C32 /* Network.m */; };
 		276925A31D647F6A002A0C32 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925A21D647F6A002A0C32 /* Weather.m */; };
+		276925A91D64913E002A0C32 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925A81D64913E002A0C32 /* DataController.m */; };
+		276925AF1D64932E002A0C32 /* WeatherServiceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */; };
+		276925B21D64934D002A0C32 /* ImageServiceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925B11D64934D002A0C32 /* ImageServiceFetcher.m */; };
+		276925BD1D64959B002A0C32 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925BC1D64959B002A0C32 /* MBProgressHUD.m */; };
+		276925C11D64A430002A0C32 /* WebServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C01D64A430002A0C32 /* WebServiceController.m */; };
+		276925C41D64A7A5002A0C32 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C31D64A7A5002A0C32 /* Network.m */; };
+		276925C71D64C755002A0C32 /* NSString+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 276925C61D64C755002A0C32 /* NSString+Extended.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +40,23 @@
 		276925971D647572002A0C32 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		276925991D64763C002A0C32 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		2769259A1D64763C002A0C32 /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
-		2769259E1D647A9F002A0C32 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		2769259F1D647A9F002A0C32 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		276925A11D647F6A002A0C32 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		276925A21D647F6A002A0C32 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		276925A71D64913E002A0C32 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		276925A81D64913E002A0C32 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		276925AD1D64932E002A0C32 /* WeatherServiceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherServiceFetcher.h; sourceTree = "<group>"; };
+		276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherServiceFetcher.m; sourceTree = "<group>"; };
+		276925B01D64934D002A0C32 /* ImageServiceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageServiceFetcher.h; sourceTree = "<group>"; };
+		276925B11D64934D002A0C32 /* ImageServiceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageServiceFetcher.m; sourceTree = "<group>"; };
+		276925B31D649387002A0C32 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		276925BB1D64959B002A0C32 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		276925BC1D64959B002A0C32 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		276925BF1D64A430002A0C32 /* WebServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceController.h; sourceTree = "<group>"; };
+		276925C01D64A430002A0C32 /* WebServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceController.m; sourceTree = "<group>"; };
+		276925C21D64A7A5002A0C32 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		276925C31D64A7A5002A0C32 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		276925C51D64C755002A0C32 /* NSString+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extended.h"; sourceTree = "<group>"; };
+		276925C61D64C755002A0C32 /* NSString+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extended.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,23 +89,17 @@
 		2769257B1D64730E002A0C32 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				2769257F1D64730E002A0C32 /* AppDelegate.h */,
-				276925801D64730E002A0C32 /* AppDelegate.m */,
-				276925961D647572002A0C32 /* ListViewController.h */,
-				276925971D647572002A0C32 /* ListViewController.m */,
-				276925931D647549002A0C32 /* DetailViewController.h */,
-				276925941D647549002A0C32 /* DetailViewController.m */,
-				276925851D64730E002A0C32 /* Main.storyboard */,
+				276925B41D649408002A0C32 /* Controllers */,
+				276925B71D649448002A0C32 /* Views */,
+				276925B51D649425002A0C32 /* Models */,
+				276925B61D649439002A0C32 /* Network */,
+				276925B81D649457002A0C32 /* Helpers */,
+				276925BA1D649579002A0C32 /* ThirdParty */,
+				276925C91D64CB22002A0C32 /* Category */,
+				276925B91D649469002A0C32 /* AppDelegate */,
 				276925881D64730E002A0C32 /* Assets.xcassets */,
-				2769258A1D64730E002A0C32 /* LaunchScreen.storyboard */,
 				2769258D1D64730E002A0C32 /* Info.plist */,
 				2769257C1D64730E002A0C32 /* Supporting Files */,
-				276925991D64763C002A0C32 /* ListTableViewCell.h */,
-				2769259A1D64763C002A0C32 /* ListTableViewCell.m */,
-				2769259E1D647A9F002A0C32 /* Network.h */,
-				2769259F1D647A9F002A0C32 /* Network.m */,
-				276925A11D647F6A002A0C32 /* Weather.h */,
-				276925A21D647F6A002A0C32 /* Weather.m */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -97,6 +110,89 @@
 				2769257D1D64730E002A0C32 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		276925B41D649408002A0C32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				276925961D647572002A0C32 /* ListViewController.h */,
+				276925971D647572002A0C32 /* ListViewController.m */,
+				276925931D647549002A0C32 /* DetailViewController.h */,
+				276925941D647549002A0C32 /* DetailViewController.m */,
+				276925A71D64913E002A0C32 /* DataController.h */,
+				276925A81D64913E002A0C32 /* DataController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		276925B51D649425002A0C32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				276925A11D647F6A002A0C32 /* Weather.h */,
+				276925A21D647F6A002A0C32 /* Weather.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		276925B61D649439002A0C32 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				276925C21D64A7A5002A0C32 /* Network.h */,
+				276925C31D64A7A5002A0C32 /* Network.m */,
+				276925AD1D64932E002A0C32 /* WeatherServiceFetcher.h */,
+				276925AE1D64932E002A0C32 /* WeatherServiceFetcher.m */,
+				276925B01D64934D002A0C32 /* ImageServiceFetcher.h */,
+				276925B11D64934D002A0C32 /* ImageServiceFetcher.m */,
+				276925BF1D64A430002A0C32 /* WebServiceController.h */,
+				276925C01D64A430002A0C32 /* WebServiceController.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		276925B71D649448002A0C32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2769258A1D64730E002A0C32 /* LaunchScreen.storyboard */,
+				276925851D64730E002A0C32 /* Main.storyboard */,
+				276925991D64763C002A0C32 /* ListTableViewCell.h */,
+				2769259A1D64763C002A0C32 /* ListTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		276925B81D649457002A0C32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				276925B31D649387002A0C32 /* Common.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		276925B91D649469002A0C32 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2769257F1D64730E002A0C32 /* AppDelegate.h */,
+				276925801D64730E002A0C32 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		276925BA1D649579002A0C32 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				276925BB1D64959B002A0C32 /* MBProgressHUD.h */,
+				276925BC1D64959B002A0C32 /* MBProgressHUD.m */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		276925C91D64CB22002A0C32 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				276925C51D64C755002A0C32 /* NSString+Extended.h */,
+				276925C61D64C755002A0C32 /* NSString+Extended.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,13 +265,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276925C11D64A430002A0C32 /* WebServiceController.m in Sources */,
 				276925811D64730E002A0C32 /* AppDelegate.m in Sources */,
+				276925A91D64913E002A0C32 /* DataController.m in Sources */,
 				2769257E1D64730E002A0C32 /* main.m in Sources */,
 				276925A31D647F6A002A0C32 /* Weather.m in Sources */,
+				276925BD1D64959B002A0C32 /* MBProgressHUD.m in Sources */,
+				276925AF1D64932E002A0C32 /* WeatherServiceFetcher.m in Sources */,
 				276925981D647572002A0C32 /* ListViewController.m in Sources */,
 				276925951D647549002A0C32 /* DetailViewController.m in Sources */,
-				276925A01D647A9F002A0C32 /* Network.m in Sources */,
+				276925B21D64934D002A0C32 /* ImageServiceFetcher.m in Sources */,
+				276925C41D64A7A5002A0C32 /* Network.m in Sources */,
 				2769259C1D64763C002A0C32 /* ListTableViewCell.m in Sources */,
+				276925C71D64C755002A0C32 /* NSString+Extended.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +428,7 @@
 				276925921D64730E002A0C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

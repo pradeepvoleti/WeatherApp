@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ListViewController.h"
+#import "DetailViewController.h"
+#import "Weather.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -18,6 +21,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.delegate = self;
+    
+    DetailViewController *detailVC = [splitViewController.viewControllers lastObject];
+    
+    UINavigationController *navVC = [splitViewController.viewControllers firstObject];
+    ListViewController *listVC = (ListViewController *)[navVC topViewController];
+    listVC.delegate = detailVC;
+    
+    Weather *weather = [listVC.tableData firstObject];
+    detailVC.weather = weather;
+    
     return YES;
 }
 

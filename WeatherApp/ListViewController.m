@@ -7,48 +7,99 @@
 //
 
 #import "ListViewController.h"
+#import "ListTableViewCell.h"
+#import "DataController.h"
+#import "MBProgressHUD.h"
 
 NSString *const CellIdentifier = @"cellIdentifier";
-CGFloat const CellHeight = 100;
+CGFloat const CellHeight = 80;
 CGFloat const FooterHeight = 0.01;
 
 @interface ListViewController ()
+
+@property (strong, nonatomic) DataController *dataController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *titles;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *values;
+
 @end
 
 @implementation ListViewController
 
+#pragma mark - Setters
+
+- (DataController *)dataController {
+    if (!_dataController) {
+        _dataController = [[DataController alloc]init];
+    }
+    return _dataController;
+}
+
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.hidden = YES;
+    [self callWeatherAPI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - UITableView Delegates & Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.tableData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    ListTableViewCell *cell = (ListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    [cell setdata:[self.tableData objectAtIndex:indexPath.row]];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.delegate didSelectWeather:[self.tableData objectAtIndex:indexPath.row]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CellHeight;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return FooterHeight;
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return FooterHeight;
+//}
+
+#pragma mark - Private Methods
+
+- (void)callWeatherAPI {
+    [self showLoading];
+    ListViewController *__weak weakSelf = self;
+//    self.dataController = [[DataController alloc]init];
+    [self.dataController getListData:^(NSArray *array) {
+        weakSelf.tableData = array;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf hideLoading];
+            _tableView.hidden = YES;
+            [_tableView reloadData];
+        });
+    }];
+}
+
+#pragma mark - Loaders
+
+-(void)showLoading
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.label.text = @"Loading...";
+    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:.2f];
+}
+
+-(void)hideLoading
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 /*
